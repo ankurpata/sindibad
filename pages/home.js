@@ -20,7 +20,7 @@ import styles from "assets/jss/nextjs-material-kit/pages/landingPage.js";
 // Sections for this page
 import PackagesSection from "pages-sections/LandingPage-Sections/PackagesSection.js";
 import HowItWorks from "pages-sections/LandingPage-Sections/HowItWorks.js";
-import SearchBox from "pages-sections/LandingPage-Sections/SearchBox.js"; 
+import SearchBox from "pages-sections/LandingPage-Sections/SearchBox.js";
 import Head from 'next/head';
 
 const dashboardRoutes = [];
@@ -40,7 +40,7 @@ export default function LandingPage(props) {
       <Header
         color="white"
         routes={dashboardRoutes}
-        rightLinks={<HeaderLinks />}
+        rightLinks={<HeaderLinks isLoggedIn={false} />}
         fixed
         changeColorOnScroll={{
           height: 400,
@@ -64,11 +64,11 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <PackagesSection />
         </div>
-        <div className={classes.container}> 
+        <div className={classes.container}>
           <HowItWorks />
         </div>
       </div>
-      <Footer />
+      <Footer className={classes.homeFooter} />
     </div>
   );
 }

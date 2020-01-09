@@ -39,7 +39,7 @@ const packagesHomeStyle = {
     'box-shadow': '0 8px 5px -5px rgba(0, 0, 0, 0.2), 0 6px 10px 5px rgba(0, 0, 0, 0.12), 0 8px 5px -5px rgba(0, 0, 0, 0.2)',
     'border-radius': '6px',
     'border-radius': '6px',
-    marginBottom: '20px'
+    marginBottom: '30px'
     // 'background-image': `url(https://amp.thenational.ae/image/policy:1.131662:1499274996/image/jpeg.jpg?f=16x9&w=1200&$p$f$w=dfa40e8)`
   },
   badgeViewMore: {

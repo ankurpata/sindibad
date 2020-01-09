@@ -27,22 +27,22 @@ export default function Footer(props) {
     [classes.footerWhiteFont]: whiteFont
   });
   return (
-    <footer className={footerClasses}>
+    <footer className={footerClasses + " "  + props.className }>
       <div className={classes.container}>
-        <div className={classes.left}>
+        <div>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.creative-tim.com/?ref=njsmk-footer"
+                href=""
                 className={classes.block}
                 target="_blank"
               >
-                Creative Tim
+                Sindibad
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.creative-tim.com/presentation?ref=njsmk-footer"
+                href=""
                 className={classes.block}
                 target="_blank"
               >
@@ -51,7 +51,7 @@ export default function Footer(props) {
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="http://blog.creative-tim.com/?ref=njsmk-footer"
+                href=""
                 className={classes.block}
                 target="_blank"
               >
@@ -60,7 +60,7 @@ export default function Footer(props) {
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.creative-tim.com/license?ref=njsmk-footer"
+                href=" "
                 className={classes.block}
                 target="_blank"
               >
@@ -69,17 +69,16 @@ export default function Footer(props) {
             </ListItem>
           </List>
         </div>
-        <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
+        <div className={classes.copyright}>
+          &copy; {1900 + new Date().getYear()}, made with{" "}
+          <Favorite className={classes.icon} /> in{" "}
           <a
-            href="https://www.creative-tim.com?ref=njsmk-footer"
+            href=""
             className={aClasses}
             target="_blank"
           >
-            Creative Tim
-          </a>{" "}
-          for a better web.
+            Dubai.
+          </a>
         </div>
       </div>
     </footer>

@@ -15,8 +15,8 @@ const landingPageStyle = {
     minHeight: "32px",
     color: "#FFFFFF",
     textDecoration: "none",
-    color:"#606d7a",
-    fontSize:'34px'
+    color: "#606d7a",
+    fontSize: '34px'
   },
   subtitle: {
     fontSize: "1.313rem",
@@ -37,8 +37,12 @@ const landingPageStyle = {
   mainRaisedZero: {
     margin: "0px",
     borderRadius: "6px",
-    boxShadow:
-      "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
+    // boxShadow:
+    //   "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
+  },
+  homeFooter: {
+    padding: '10em 0',
+    borderTop: '1px solid #c4c8d6'
   }
 };
 

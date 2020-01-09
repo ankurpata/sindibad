@@ -7,11 +7,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
-
 // @material-ui/icons
-import { Apps, CloudDownload , Person} from "@material-ui/icons";
-import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
+import { CloudDownload, Person, } from "@material-ui/icons";
+
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
@@ -23,38 +21,53 @@ const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
   const classes = useStyles();
+  const { isLoggedIn } = props;
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          navDropdown
-          buttonText="My Account"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Person}
-          dropdownList={[
-            <Link href="/subscription">
-              <a className={classes.dropdownLink}>Subscriptions</a>
-            </Link>,
-             <Link href="/more">
-             <a className={classes.dropdownLink}>More</a>
-           </Link>,
-           <a
-              href="https://creativetimofficial.github.io/nextjs-material-kit/#/documentation?ref=njsmk-navbar"
-              target="_blank"
-              className={classes.dropdownLink}
-            >
-              Logout
+        {isLoggedIn ?
+          <CustomDropdown
+            noLiPadding
+            navDropdown
+            buttonText="My Account"
+            buttonProps={{
+              className: classes.navLink,
+              color: "transparent"
+            }}
+            buttonIcon={Person}
+            dropdownList={[
+              <Link href="/subscription">
+                <a className={classes.dropdownLink}>Subscriptions</a>
+              </Link>,
+              <Link href="/more">
+                <a className={classes.dropdownLink}>More</a>
+              </Link>,
+              <a
+                href=""
+                target="_blank"
+                className={classes.dropdownLink}
+              >
+                Logout
             </a>
-          ]}
-        />
+            ]}
+          /> :
+          <div className={classes.loginTab}>
+            <Link href="/login">
+              <Button
+                href=""
+                color="transparent"
+                target="_blank"
+                className={classes.navLink}
+               >
+                 <Person className={classes.icons} /> Login/Signup
+                </Button>
+            </Link>
+          </div>
+        }
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          href="https://www.creative-tim.com/product/nextjs-material-kit?ref=njsmk-navbar"
+          href=""
           color="transparent"
           target="_blank"
           className={classes.navLink}
@@ -62,8 +75,7 @@ export default function HeaderLinks(props) {
           <CloudDownload className={classes.icons} /> Explore
         </Button>
       </ListItem>
-      
-      
+
     </List>
   );
 }

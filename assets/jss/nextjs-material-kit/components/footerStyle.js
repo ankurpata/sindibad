@@ -35,7 +35,7 @@ const footerStyle = {
   },
   footerWhiteFont: {
     "&,&:hover,&:focus": {
-      color: "#FFFFFF"
+      color: "#404c5b"
     }
   },
   container,
@@ -43,6 +43,13 @@ const footerStyle = {
     marginBottom: "0",
     padding: "0",
     marginTop: "0"
+  },
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    flexDirection: 'column'
   },
   inlineBlock: {
     display: "inline-block",
@@ -54,6 +61,10 @@ const footerStyle = {
     height: "18px",
     position: "relative",
     top: "3px"
-  }
+  },
+  footer: {
+   
+  },
+  copyright:{color:'#404c5b', fontWeight:'400'}
 };
 export default footerStyle;

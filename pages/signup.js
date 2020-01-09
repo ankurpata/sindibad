@@ -3,8 +3,6 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Icon from "@material-ui/core/Icon";
-import Link from "next/link";
-
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
@@ -73,7 +71,7 @@ export default function LoginPage(props) {
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="primary" className={classes.cardHeader}>
-                    <h4>Login</h4>
+                    <h4>SignUp</h4>
                     <div className={classes.socialLine}>
                       <Button
                         justIcon
@@ -107,7 +105,22 @@ export default function LoginPage(props) {
                   <p className={classes.divider}>Or Be Classical</p>
                   <CardBody>
                     <CustomInputOriginal
-                      labelText="Email"
+                      labelText="First Name..."
+                      id="first"
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: "text",
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <People className={classes.inputIconsColor} />
+                          </InputAdornment>
+                        )
+                      }}
+                    />
+                    <CustomInputOriginal
+                      labelText="Email..."
                       id="email"
                       formControlProps={{
                         fullWidth: true
@@ -140,20 +153,10 @@ export default function LoginPage(props) {
                       }}
                     />
                   </CardBody>
-                  <CardFooter style={{display:'flex'}} className={classes.cardFooter}>
-                    <Button style={{ marginLeft: 'auto' }} color="primary" size="lg">
-                      Login
+                  <CardFooter className={classes.cardFooter}>
+                    <Button color="primary" size="lg">
+                      Register
                     </Button>
-                    <span>
-                      <span>&nbsp;&nbsp;or&nbsp;&nbsp;</span>
-                      <span>
-                      <Link href="/signup">
-                        <Button color="info" size="sm">
-                          Signup
-                       </Button>
-                       </Link>
-                      </span>
-                    </span>
                   </CardFooter>
                 </form>
               </Card>

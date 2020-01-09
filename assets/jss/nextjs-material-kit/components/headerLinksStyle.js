@@ -113,13 +113,14 @@ const headerLinksStyle = theme => ({
       color: "inherit",
       textDecoration: "none",
       display: "block",
-      padding: "10px 20px"
+      padding: "10px 25px"
     }
   },
   ...tooltip,
   marginRight5: {
     marginRight: "5px"
-  }
+  },
+  inlineFlex:{display: 'inline-flex'}
 });
 
 export default headerLinksStyle;

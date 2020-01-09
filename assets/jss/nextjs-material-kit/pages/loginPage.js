@@ -16,6 +16,7 @@ const signupPageStyle = {
   pageHeader: {
     minHeight: "100vh",
     height: "auto",
+    color:"#404c5b",
     display: "inherit",
     position: "relative",
     margin: "0",
@@ -23,7 +24,7 @@ const signupPageStyle = {
     border: "0",
     alignItems: "center",
     "&:before": {
-      background: "rgba(0, 0, 0, 0.5)"
+      background: "transparent"
     },
     "&:before,&:after": {
       position: "absolute",
@@ -36,7 +37,7 @@ const signupPageStyle = {
       content: '""'
     },
     "& footer li a,& footer li a:hover,& footer li a:active": {
-      color: "#FFFFFF"
+      color: "#404c5b"
     },
     "& footer": {
       position: "absolute",

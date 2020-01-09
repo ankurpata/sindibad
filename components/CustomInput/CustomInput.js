@@ -66,11 +66,8 @@ export default function CustomInput(props) {
       ) : null}
       <TextField
      
-        classes={{
-          input: inputClasses,
-          root: marginTop,
-          disabled: classes.disabled,
-          underline: underlineClasses
+        classes={{ 
+          root: marginTop, 
         }}
         id={id}
         {...inputProps}

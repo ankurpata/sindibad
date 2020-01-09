@@ -53,9 +53,11 @@
     "react": "16.9.0",
     "react-datepicker": "^2.10.1",
     "react-datetime": "2.16.3",
+    "react-device-detect": "^1.11.14",
     "react-dom": "16.9.0",
     "react-slick": "0.25.2",
     "react-swipeable-views": "0.13.3",
+    "react-window-size": "^1.2.2",
     "styled-components": "4.3.2",
     "webpack": "4.39.3"
   }

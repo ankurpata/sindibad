@@ -29,15 +29,24 @@ const searchBarHeader = (theme) => ({
   fl80: {
     flex: '80', display: 'inline-flex'
   },
-  searchBtn: {display: 'inline-flex'},
+  searchBtn: { display: 'inline-flex' },
   searchBarWrapper: {
-    display:'none'
+    display: 'none'
   },
   '@media (min-width: 1024px)': {
     searchBarWrapper: {
       display: 'inline-flex'
     }
+  },
+  '@media (max-width: 1024px)': {
+    searchDialogBox: {
+      display: 'inline-flex'
+    }
+  },
+  searchDialogBox: {
+    display: 'none'
   }
+
 });
 
 export default searchBarHeader;

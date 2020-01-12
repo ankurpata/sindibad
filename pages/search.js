@@ -1,25 +1,17 @@
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Icon from "@material-ui/core/Icon";
-import Link from "next/link";
+import classNames from "classnames";
 
 // @material-ui/icons
-import Email from "@material-ui/icons/Email";
-import People from "@material-ui/icons/People";
+ 
 // core components
 import Header from "components/Header/Header.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Footer from "components/Footer/Footer.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardFooter from "components/Card/CardFooter.js";
-import CustomInputOriginal from "components/CustomInput/CustomInputOriginal.js";
+import CustomPackgeSummary from "components/CustomPackgeSummary/CustomPackgeSummary.js";
+ 
+import fetch from 'isomorphic-unfetch';
 
 import styles from "assets/jss/nextjs-material-kit/pages/loginPage.js";
 const dashboardRoutes = [];
@@ -27,7 +19,8 @@ import image from "assets/img/bgLogin.png";
 
 const useStyles = makeStyles(styles);
 
-export default function LoginPage(props) {
+export default function SearchPage(props) {
+  console.log(props, ' props ', props.query.q, props.events)
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   setTimeout(function () {
     setCardAnimation("");
@@ -67,17 +60,22 @@ export default function LoginPage(props) {
           backgroundSize: 'contain'
         }}
       >
-        <div className={classes.container}>
-          <GridContainer justify="center">
-            <GridItem xs={12} sm={6} md={4}>
-              <Card className={classes[cardAnimaton]}>
-            
-              </Card>
-            </GridItem>
-          </GridContainer>
+        <div className={classNames(classes.main, classes.mainRaisedZero)}>
+          <div className={classes.container}>
+            <CustomPackgeSummary/>
+          </div>
+          <div className={classes.container}>
+             
+          </div>
         </div>
         <Footer />
       </div>
     </div>
   );
+}
+
+SearchPage.getInitialProps = async ({ query }) => {
+  const res = await fetch(`http://api.tvmaze.com/search/shows?q=girls`);
+  const events = await res.json();
+  return { query, events }
 }
